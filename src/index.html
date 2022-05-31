@@ -10,15 +10,29 @@
   <body>
     <div class="container">
       <div class="video-list">
-        <video src="videos\vid1.mp4"></video>
+        <video class="active" src="videos\vid1.mp4"></video>
         <video src="videos\vid2.mp4"></video>
         <video src="videos\vid3.mp4"></video>
-        <video src="videos\vid4.mp4"></video>
+        <video src="videos\vid5.mp4"></video>
+
       </div>
 
       <div class="main-video">
         <video src="videos\vid1.mp4" controls></video>
       </div>
     </div>
+
+    <!--jquery cdn link>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".video-list video").click(function () {
+          $(".main-video video").attr("src", $(this).attr("src"));
+          $(".video-list video").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
