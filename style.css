@@ -28,6 +28,7 @@ body {
   width: 20%;
   padding: 10px;
   padding-right: 0;
+  overflow: auto;
 }
 
 .container .video-list video {
